@@ -29,7 +29,7 @@ RUN	cd /var/www/html/ && \
 # Reset to specific version, move files to WWW-root
 # https://bitbucket.org/fivefilters/full-text-rss/commits/
 RUN	cd /var/www/html/full-text-rss/ && \
-	git reset --hard e7753953f6dd5d69b889956f42e130d2d62f6514 && \
+	git reset --hard bfed79edc7819b84795102c5fc8b82403d00ce41 && \
 	mv -fv * ../
 
 

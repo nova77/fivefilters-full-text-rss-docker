@@ -1,0 +1,6 @@
+version: '2.1'
+services:
+
+  fullfeedrss:
+    build: .
+    image: "full-text-rss:3.5"

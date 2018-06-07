@@ -10,8 +10,8 @@ ENV	BUILD_DEPS \
 
 # APT proxy configuration
 # Unfortunately, www-proxy.fkie.fraunhofer.de does not seem to work here :/
-RUN	echo 'Acquire::http::proxy "http://128.7.3.56:3128/";' > /etc/apt/apt.conf && \
-	echo 'Acquire::https::proxy "https://128.7.3.56:3128/";' >> /etc/apt/apt.conf
+#RUN	echo 'Acquire::http::proxy "http://128.7.3.56:3128/";' > /etc/apt/apt.conf && \
+#	echo 'Acquire::https::proxy "https://128.7.3.56:3128/";' >> /etc/apt/apt.conf
 
 
 RUN	apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
@@ -19,7 +19,7 @@ RUN	apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
 
 
 # GIT proxy configuration
-RUN	git config --global http.proxy https://128.7.3.56:3128
+#RUN	git config --global http.proxy https://128.7.3.56:3128
 
 
 # Clone the source

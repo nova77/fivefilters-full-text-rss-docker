@@ -368,7 +368,7 @@ $options->cors = false;
 // Note: if you're listing proxies so Full-Text RSS randomly chooses one
 // for each request, you can also specify 'direct' as a value to make
 // sure direct requests are randomly made as well.
-$options->proxy_servers = array('fkie'=>array('host'=>'128.7.3.56:3128'));
+$options->proxy_servers = array();
 // For example:
 //$options->proxy_servers = array('example1'=>array('host'=>'127.0.0.1:8888'), 'example2'=>array('host'=>'127.0.0.1:8888', 'auth'=>'user:pass'), 'direct'=>array());
 // If Polipo is installed and you want to use it as a caching proxy, uncomment the following line.

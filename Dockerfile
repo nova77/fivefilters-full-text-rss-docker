@@ -25,4 +25,6 @@ COPY --from=build /var/www/html /var/www/html
 # Enable Full-Text-Feed RSS caching
 RUN	chmod -Rv 777 /var/www/html/cache
 
+VOLUME	/var/www/html/cache
+
 COPY	custom_config.php /var/www/html/

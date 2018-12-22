@@ -18,12 +18,13 @@ RUN	cd /var/www/html/full-text-rss/ && \
 
 
 
-FROM	tutum/apache-php
+FROM	php:5-apache
 
 COPY --from=build /var/www/html /var/www/html
 
 # Enable Full-Text-Feed RSS caching
-RUN	chmod -Rv 777 /var/www/html/cache
+RUN		mkdir -p /var/www/html/cache/rss && \
+			chmod -Rv 777 /var/www/html/cache
 
 VOLUME	/var/www/html/cache
 

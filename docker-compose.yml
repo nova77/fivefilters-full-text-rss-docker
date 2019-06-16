@@ -3,7 +3,7 @@ services:
 
   fullfeedrss:
     build: .
-    image: "fivefilters-full-text-rss-docker:3.5"
+    image: "heussd/fivefilters-full-text-rss:3.5"
     volumes:
       - rss-cache:/var/www/html/cache"
     expose:

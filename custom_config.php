@@ -223,7 +223,7 @@ $options->remove_native_ads = false;
 // If overriding with an environment variable, separate username and password with a colon, e.g.:
 // ftr_admin_credentials: admin:my-secret-password
 // Example: $options->admin_credentials = array('username'=>'admin', 'password'=>'my-secret-password');
-$options->admin_credentials = array('username'=>'admin', 'password'=>'');
+$options->admin_credentials = array('username'=>'admin', 'password'=>getenv('FTR_ADMIN_PASSWORD'));
 
 // URLs to allow
 // ----------------------

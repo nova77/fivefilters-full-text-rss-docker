@@ -27,4 +27,3 @@ VOLUME	/var/www/html/cache
 
 COPY	custom_config.php /var/www/html/
 
-HEALTHCHECK CMD curl -f localhost || exit 1;

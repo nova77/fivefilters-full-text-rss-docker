@@ -3,7 +3,7 @@ services:
 
   fullfeedrss:
     build: .
-    image: "heussd/fivefilters-full-text-rss:3.8.1"
+    image: "heussd/fivefilters-full-text-rss:latest"
     environment:
       # Leave empty to disable admin section
       - FTR_ADMIN_PASSWORD=

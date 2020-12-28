@@ -16,6 +16,13 @@ RUN	git clone https://github.com/fivefilters/ftr-site-config . && \
 
 FROM	php:5-apache
 
+RUN   apt-get update && \
+      apt-get -y install --no-install-recommends \
+      libtidy-dev \
+      && rm -rf /var/lib/apt/lists/*
+
+RUN		docker-php-ext-install tidy
+
 COPY --from=gitsrc /ftr /var/www/html
 COPY --from=gitconfig /ftr-site-config/.* /ftr-site-config/* /var/www/html/site_config/standard/
 

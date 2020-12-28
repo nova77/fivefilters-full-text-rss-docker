@@ -5,7 +5,7 @@
 FROM	heussd/git as gitsrc
 WORKDIR /ftr
 RUN	git clone https://bitbucket.org/fivefilters/full-text-rss.git . && \
-		git reset --hard a5a4a192bc3724a80a18f3ac296e4b5070cd2349
+		git reset --hard 384d52fd83361ffd6e7f28bd39b322970a015a28
 
 
 FROM	heussd/git as gitconfig

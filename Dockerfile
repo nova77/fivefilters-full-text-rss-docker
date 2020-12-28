@@ -10,8 +10,7 @@ RUN	git clone https://bitbucket.org/fivefilters/full-text-rss.git . && \
 
 FROM	heussd/git as gitconfig
 WORKDIR	/ftr-site-config
-RUN	git clone https://github.com/fivefilters/ftr-site-config . && \
-		git reset --hard 0e57cc7dddad5ba28181ea06f70c475caab2081a
+RUN	git clone https://github.com/fivefilters/ftr-site-config . 
 
 
 FROM	php:5-apache

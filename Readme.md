@@ -6,6 +6,6 @@
 
 This repository contains a [Dockerfile](Dockerfile) for the [fivefilters Full-Text RSS service](http://fivefilters.org/content-only/), which can be used to enrich arbitrary RSS feeds.
 
-Built and pushed [automatically](.github/workflows/build-and-push.yml) every 2 weeks.
+Built and pushed [automatically](.github/workflows/build-and-push.yml) every week.
 
 Not affiliated with [fivefilters.org](http://fivefilters.org/). The Dockerfile is licensed under [MIT conditions](LICENSE).

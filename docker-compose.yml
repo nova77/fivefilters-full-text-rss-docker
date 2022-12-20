@@ -1,8 +1,5 @@
-version: '3.7'
 services:
-
   fullfeedrss:
-    build: .
     image: "heussd/fivefilters-full-text-rss:latest"
     environment:
       # Leave empty to disable admin section
@@ -11,6 +8,5 @@ services:
       - "rss-cache:/var/www/html/cache"
     ports:
       - "80:80"
-
 volumes:
   rss-cache:

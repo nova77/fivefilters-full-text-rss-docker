@@ -4,11 +4,9 @@
 ![Number of Image Pulls](https://img.shields.io/docker/pulls/heussd/fivefilters-full-text-rss)
 ![Image size](https://img.shields.io/docker/image-size/heussd/fivefilters-full-text-rss/latest)
 
-This is containerized version of [fivefilters full-text-rss](https://www.fivefilters.org/full-text-rss/), which retrieves the full-text of individual articles or complete full-text RSS feeds.
+This is a containerized version of [fivefilters full-text-rss](https://www.fivefilters.org/full-text-rss/), which retrieves the full-text of individual articles or complete full-text RSS feeds.
 
-Not affiliated with [fivefilters.org](http://fivefilters.org/).
-
-The Dockerfile is licensed under [MIT conditions](LICENSE).
+Not affiliated with [fivefilters.org](http://fivefilters.org/). The Dockerfile is licensed under [MIT conditions](LICENSE).
 
 
 ## User Guide

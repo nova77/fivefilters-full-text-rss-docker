@@ -103,7 +103,7 @@ $options->summary = 'user';
 // ----------------------
 // With this enabled relative URLs found in the extracted content
 // block are automatically rewritten as absolute URLs.
-$options->rewrite_relative_urls = true;
+$options->rewrite_relative_urls = getenv('REWRITE_RELATIVE_URLS') === 'true';
 
 // Exclude items if extraction fails
 // ---------------------------------
@@ -121,14 +121,14 @@ $options->exclude_items_on_fail = 'user';
 // If enabled, we will try to follow single page links (e.g. print view) on multi-page articles.
 // Currently this only happens for sites where single_page_link has been defined 
 // in a site config file.
-$options->singlepage = true;
+$options->singlepage = getenv('SINGLEPAGE') === 'true';
 
 // Enable multi-page support
 // -------------------------
 // If enabled, we will try to follow next page links on multi-page articles.
 // Currently this only happens for sites where next_page_link has been defined 
 // in a site config file.
-$options->multipage = true;
+$options->multipage = getenv('MULTIPAGE') === 'true';
 
 // Enable disk caching
 // ----------------------
@@ -140,7 +140,7 @@ $options->multipage = true;
 // Initially it's best to keep this disabled to make sure everything works
 // as expected. If you have APC enabled, please also see smart_cache in the
 // advanced section.
-$options->caching = true;
+$options->caching = getenv('CACHING') === 'true';
 
 // Cache time (minutes)
 // ----------------------
@@ -149,7 +149,7 @@ $options->caching = true;
 // sent in the Full-Text RSS HTTP response.
 // So even if you disable disk caching, this value will still
 // affect the cache headers in the HTTP response.
-$options->cache_time = 120;
+$options->cache_time = intval(getenv('CACHE_TIME'));
 
 // Cache directory
 // ----------------------
@@ -179,7 +179,7 @@ $options->error_message = '[unable to retrieve full-text content]';
 // Keep enclosure in feed items
 // If enabled, we will try to preserve enclosures if present.
 // ----------------------
-$options->keep_enclosures = true;
+$options->keep_enclosures = getenv('KEEP_ENCLOSURES') === 'true';
 
 // Detect language
 // ---------------
@@ -191,13 +191,13 @@ $options->keep_enclosures = true;
 // * As above, but guess if not present: 2
 // * Always guess: 3
 // * User decides: 'user' (value of 0-3 can be passed in querystring: e.g. &lang=2, &lang=1 will be default if nothing supplied)
-$options->detect_language = 'user';
+$options->detect_language = getenv('DETECT_LANGUAGE');
 
 // Allow user-submitted site config in request
 // ---------------
 // If enabled, a user can submit site config rules directly in the request
 // using the siteconfig request parameter. Disabled (false) by default.
-$options->user_submitted_config = false;
+$options->user_submitted_config = getenv('USER_SUBMITTED_CONFIG') === 'true';
 
 // Remove items identified as native ads?
 // ---------------
@@ -208,7 +208,7 @@ $options->user_submitted_config = false;
 // element to the item. But you can also request that such ads be removed from
 // the output altogether. To do so, set the option below to true.
 // Note: this only has effect when the input URL is a feed, not a web page.
-$options->remove_native_ads = false;
+$options->remove_native_ads = getenv('REMOVE_NATIVE_ADS') === 'true';
 
 /////////////////////////////////////////////////
 /// RESTRICT ACCESS /////////////////////////////
@@ -308,7 +308,7 @@ $options->max_entries_with_key = 10;
 // true - enabled, all content will be filtered
 // 'user' (default) - user must pass &xss=1 in makefulltextfeed.php querystring to enable
 // false - disabled
-$options->xss_filter = 'user';
+$options->xss_filter = getenv('XSS_FILTER');
 
 // Favour item titles in feed
 // ----------------------
@@ -324,7 +324,7 @@ $options->xss_filter = 'user';
 // * Favour feed titles with user override: 'user' (default)
 // Note: this has no effect when the input URL is to a web page - in these cases
 // we always use the extracted title in the generated feed.
-$options->favour_feed_titles = 'user';
+$options->favour_feed_titles = getenv('FAVOUR_FEED_TITLES');
 
 // Allowed HTML parsers
 // ----------------------
@@ -348,14 +348,14 @@ $options->allowed_parsers = array('libxml', 'html5php');
 // Possible values:
 // * false: Don't allow override in querystring
 // * true: Allow (default)
-$options->allow_parser_override = true;
+$options->allow_parser_override = getenv('ALLOW_PARSER_OVERRIDE') === 'true';
 
 // Enable Cross-Origin Resource Sharing (CORS)
 // ----------------------
 // If enabled we'll send the following HTTP header
 // Access-Control-Allow-Origin: *
 // see http://en.wikipedia.org/wiki/Cross-origin_resource_sharing
-$options->cors = false;
+$options->cors = getenv('CORS') === 'true';
 
 // Proxy server(s)
 // ----------------------
@@ -402,7 +402,7 @@ $options->allow_proxy_override = true;
 // for the first time) in APC's user cache. Keys prefixed with 'sc.'
 // This improves performance by reducing disk access.
 // Note: this has no effect if APC is unavailable on your server.
-$options->apc = true;
+$options->apc = getenv('APC') === 'true';
 
 // Smart cache (experimental)
 // ----------------------
@@ -412,7 +412,7 @@ $options->apc = true;
 // This improves performance by reducing disk access.
 // Note: this has no effect if APC is disabled or unavailable on your server,
 // or if you have caching disabled.
-$options->smart_cache = true;
+$options->smart_cache = getenv('SMART_CACHE') === 'true';
 
 // Fingerprints
 // ----------------------
@@ -469,7 +469,7 @@ $options->content_type_exc = array(
 // This corresponds to Zend_Cache's hashed_directory_level
 // see http://framework.zend.com/manual/en/zend.cache.backends.html
 // It's best not to change this if you're unsure.
-$options->cache_directory_level = 0;
+$options->cache_directory_level = intval(getenv('CACHE_DIRECTORY_LEVEL'));
 
 // Cache cleanup
 // -------------
@@ -478,7 +478,7 @@ $options->cache_directory_level = 0;
 // 100 = clean cache roughly once every 100 script runs
 // x = clean cache roughly once every x script runs
 // ...you get the idea :)
-$options->cache_cleanup = 100;
+$options->cache_cleanup = intval(getenv('CACHE_CLEANUP'));
 
 /////////////////////////////////////////////////
 /// DO NOT CHANGE ANYTHING BELOW THIS ///////////

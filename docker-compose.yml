@@ -4,6 +4,24 @@ services:
     environment:
       # Leave empty to disable admin section
       - FTR_ADMIN_PASSWORD=
+      - REWRITE_RELATIVE_URLS=true
+      - SINGLEPAGE=true
+      - MULTIPAGE=true
+      - SMART_CACHE=true
+      - CACHING=true
+      - CACHE_TIME=120
+      - APC=true
+      - ERROR_MESSAGE="[unable to retrieve full-text content]"
+      - KEEP_ENCLOSURES=true
+      - DETECT_LANGUAGE=user
+      - USER_SUBMITTED_CONFIG=false
+      - REMOVE_NATIVE_ADS=false
+      - XSS_FILTER=user
+      - FAVOUR_FEED_TITLES=user
+      - ALLOW_PARSER_OVERRIDE=true
+      - CORS=false
+      - CACHE_DIRECTORY_LEVEL=0
+      - CACHE_CLEANUP=100
     volumes:
       - "rss-cache:/var/www/html/cache"
     ports:
